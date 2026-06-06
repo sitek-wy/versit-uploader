@@ -8,7 +8,7 @@ Windows desktop application, distributed as a single self-contained `.exe` with 
 
 ## Highlights
 
-- **Multi-host** — upload to [Uploadao](https://uploadao.com) and [Rapidgator](https://rapidgator.net) from one app. Switch hosts from a dropdown; each host keeps its own login.
+- **Multi-host** — upload to [Uploadao](https://uploadao.com), [Rapidgator](https://rapidgator.net), and [1fichier](https://1fichier.com) from one app. Switch hosts from a dropdown; each host keeps its own login.
 - **Built for big files** — fully streamed uploads keep memory usage flat (a few MB of RAM) whether the file is 5 MB or 60 GB.
 - **Upload queue** — add many files, watch them process one after another or several at once.
 - **Parallel uploads** — send multiple files simultaneously (configurable, 1–8).
@@ -33,10 +33,11 @@ No installer, no dependencies — just run the `.exe`. Windows 10/11, 64-bit.
 
 ## Usage
 
-1. **Pick a host** from the *Service* dropdown (Uploadao or Rapidgator).
-2. **Log in** (optional for Uploadao, required for Rapidgator). Tick *Remember me* to stay logged in.
+1. **Pick a host** from the *Service* dropdown (Uploadao, Rapidgator, or 1fichier).
+2. **Log in** (optional for Uploadao, required for Rapidgator and 1fichier). Tick *Remember me* to stay logged in.
    - Logged in → files are attached to your account.
    - Anonymous (Uploadao only) → files upload without an account.
+   - **1fichier** → paste your API key into the *Password* field (the Login field is ignored).
 3. **Add files** — click *Add files* or drag them onto the window.
 4. **Tune throughput** (optional):
    - **Files at once** — how many files upload simultaneously (1–8).
@@ -54,6 +55,7 @@ The queue and links persist after you close the app, so you can come back to the
 |------|------|--------------|-------|
 | **Uploadao** | Optional (account or anonymous) | Multi-threaded chunked | Parallel chunks per file; fastest option |
 | **Rapidgator** | Required (account) | Single streamed connection | Free accounts limited to 5 GB/file |
+| **1fichier** | Required (API key) | Single streamed connection | Paste your **API key** into the *Password* field (Login is ignored) |
 
 ---
 
