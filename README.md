@@ -6,6 +6,26 @@ Windows desktop application, distributed as a single self-contained `.exe` with 
 
 ---
 
+## Screenshots
+
+Light & dark themes, a multi-host upload queue with per-file progress, an account manager with search, and a PL/EN interface.
+
+<p align="center">
+  <img src="screenshots/upload-light.png" alt="Versit Uploader — upload queue (light theme)" width="90%">
+</p>
+
+<p align="center">
+  <img src="screenshots/upload-dark.png" alt="Upload queue (dark theme)" width="46%">
+  &nbsp;
+  <img src="screenshots/accounts.png" alt="Account manager" width="46%">
+</p>
+
+<p align="center">
+  <img src="screenshots/settings.png" alt="Settings — theme and language" width="60%">
+</p>
+
+---
+
 ## Highlights
 
 - **Multi-host** — upload to [Uploadao](https://uploadao.com), [Rapidgator](https://rapidgator.net), [1fichier](https://1fichier.com), and [DDownload](https://ddownload.com) from one app.
