@@ -28,7 +28,7 @@ Light & dark themes, a multi-host upload queue with per-file progress, an accoun
 
 ## Highlights
 
-- **Multi-host** — upload to [Uploadao](https://uploadao.com), [Rapidgator](https://rapidgator.net), [1fichier](https://1fichier.com), and [DDownload](https://ddownload.com) from one app.
+- **Multi-host** — upload to [Uploadao](https://uploadao.com), [Rapidgator](https://rapidgator.net), [1fichier](https://1fichier.com), [DDownload](https://ddownload.com), [Uploady](https://uploady.io), and [TwojPlik](https://twojplik.to) from one app.
 - **Mirror** — send the same file to several hosts at once and get a link from each. Just tick the hosts under *Send to*.
 - **Account Manager** — a dedicated tab to save and verify your credentials per host. Only configured hosts appear as upload targets.
 - **Built for big files** — fully streamed uploads keep memory usage flat (a few MB of RAM) whether the file is 5 MB or 60 GB.
@@ -93,6 +93,8 @@ The queue and links persist after you close the app.
 | **Rapidgator** | Account (login + password) | Single streamed connection | Free accounts limited to 5 GB/file |
 | **1fichier** | API key | Single streamed connection | Paste the API key into the key field |
 | **DDownload** | API key | Single streamed connection | Paste the API key into the key field |
+| **Uploady** | API key | Single streamed connection | Paste the API key into the key field |
+| **TwojPlik** | Account (login + password) | Single streamed connection | — |
 
 All uploads are streamed from disk, so even multi-GB files use only a few MB of RAM.
 
