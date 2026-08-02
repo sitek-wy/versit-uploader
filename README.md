@@ -28,7 +28,7 @@ Light & dark themes, a multi-host upload queue with per-file progress, an accoun
 
 ## Highlights
 
-- **Multi-host** — upload to [Uploadao](https://uploadao.com), [Rapidgator](https://rapidgator.net), [1fichier](https://1fichier.com), [DDownload](https://ddownload.com), [Uploady](https://uploady.io), and [TwojPlik](https://twojplik.to) from one app.
+- **Multi-host** — upload to [Uploadao](https://uploadao.com), [Rapidgator](https://rapidgator.net), [1fichier](https://1fichier.com), [DDownload](https://ddownload.com), [Uploady](https://uploady.io), [TwojPlik](https://twojplik.to), [Pobieraj](https://pobieraj.to), and [Wrzuta.net](https://wrzuta.net) from one app.
 - **Mirror** — send the same file to several hosts at once and get a link from each. Just tick the hosts under *Send to*.
 - **Account Manager** — a dedicated tab to save and verify your credentials per host. Only configured hosts appear as upload targets.
 - **Built for big files** — fully streamed uploads keep memory usage flat (a few MB of RAM) whether the file is 5 MB or 60 GB.
@@ -60,10 +60,10 @@ No installer, no dependencies — just run the `.exe`. Windows 10/11, 64-bit.
 
 Open the **Konta / Accounts** tab and fill in the hosts you want to use:
 
-- **Uploadao / Rapidgator** — login + password.
-- **1fichier / DDownload** — paste your **API key** into the key field (login is ignored).
+- **Uploadao / Rapidgator / Wrzuta.net** — login + password. Wrzuta.net uses the native Z-O-O-M API, so no browser window or Cloudflare challenge is involved.
+- **1fichier / DDownload / Uploady** — paste your **API key** into the key field (login is ignored).
 
-Click **Save & log in** — the app verifies the credentials immediately (green ✓ on success). Saved accounts are remembered between sessions.
+Click **Save & log in**. Most hosts verify the credentials immediately. Wrzuta.net follows the official Z-O-O-M behavior: it saves the account locally and verifies it when the first file is initialized. Saved accounts are remembered between sessions.
 
 ### 2. Upload (Upload tab)
 
@@ -95,6 +95,8 @@ The queue and links persist after you close the app.
 | **DDownload** | API key | Single streamed connection | Paste the API key into the key field |
 | **Uploady** | API key | Single streamed connection | Paste the API key into the key field |
 | **TwojPlik** | Account (login + password) | Single streamed connection | — |
+| **Pobieraj** | Account (login + password) | Single streamed connection | Same ZOOM network as TwojPlik |
+| **Wrzuta.net** | Account (login + password) | Resumable 40 MiB chunks | Native Z-O-O-M API with MD5 duplicate detection; no browser authentication |
 
 All uploads are streamed from disk, so even multi-GB files use only a few MB of RAM.
 
@@ -108,7 +110,7 @@ The app stores its state in:
 %APPDATA%\VersitUploader\config.json
 ```
 
-This includes per-host credentials (passwords/keys are base64-encoded, **not** strongly encrypted), your last-used settings (files-at-once, threads, selected hosts), and the saved queue with its links.
+This includes per-host credentials (passwords and keys are base64-encoded, **not** strongly encrypted), your last-used settings (files-at-once, threads, selected hosts), and the saved queue with its links.
 
 To reset everything, delete that folder.
 
