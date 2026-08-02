@@ -11,17 +11,17 @@ Windows desktop application, distributed as a single self-contained `.exe` with 
 Light & dark themes, a multi-host upload queue with per-file progress, an account manager with search, and a PL/EN interface.
 
 <p align="center">
-  <img src="screenshots/upload-light.png" alt="Versit Uploader — upload queue (light theme)" width="90%">
+  <img src="screenshots/upload-light-v1036.png" alt="Versit Uploader — upload queue (light theme)" width="90%">
 </p>
 
 <p align="center">
-  <img src="screenshots/upload-dark.png" alt="Upload queue (dark theme)" width="46%">
+  <img src="screenshots/upload-dark-v1036.png" alt="Upload queue (dark theme)" width="46%">
   &nbsp;
-  <img src="screenshots/accounts.png" alt="Account manager" width="46%">
+  <img src="screenshots/accounts-v1036.png" alt="Account manager" width="46%">
 </p>
 
 <p align="center">
-  <img src="screenshots/settings.png" alt="Settings — theme and language" width="60%">
+  <img src="screenshots/settings-v1036.png" alt="Settings — theme and language" width="60%">
 </p>
 
 ---
