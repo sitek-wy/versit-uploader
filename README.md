@@ -1,135 +1,134 @@
 # Versit Uploader
 
-A fast, no-friction desktop uploader for file-hosting services. Drop files in, get shareable links out. Built for large files and bulk uploads, with a queue, live ETA, account manager, and one-click mirroring across multiple hosts.
+**One queue. Ten hosts. Ready-to-share links.**
 
-Windows desktop application, distributed as a single self-contained `.exe` with built-in auto-updates.
+A Windows desktop uploader for large files and bulk transfers. Choose several destinations, drop in your files, and follow every upload in one spacious queue. Copy the finished links when you're done.
 
----
+[**Download for Windows**](https://github.com/sitek-wy/versit-uploader/releases/latest) · [Supported hosts](#supported-hosts) · [Quick start](#quick-start)
+
+Windows 10/11, 64-bit · Standalone `.exe` · English and Polish · Light and dark themes
 
 ## Screenshots
 
-Light & dark themes, a multi-host upload queue with per-file progress, an account manager with search, and a PL/EN interface.
+The current interface gives the file queue most of the window. Destination selection stays open while you select several hosts, with a **Done** button to close it.
 
 <p align="center">
-  <img src="screenshots/upload-light-v1036.png" alt="Versit Uploader — upload queue (light theme)" width="90%">
+  <img src="screenshots/github-2026-10-02/upload-light.png" alt="Versit Uploader: spacious queue with transfers across all ten supported hosts, light theme" width="100%">
+</p>
+
+<details>
+<summary>Dark theme, destination selection and compact window</summary>
+
+<p align="center">
+  <img src="screenshots/github-2026-10-02/upload-dark.png" alt="File queue, live progress, speed and ETA in the dark theme" width="100%">
 </p>
 
 <p align="center">
-  <img src="screenshots/upload-dark-v1036.png" alt="Upload queue (dark theme)" width="46%">
+  <img src="screenshots/github-2026-10-02/destinations.png" alt="Multi-select destination list with four hosts selected and a Done button" width="220">
   &nbsp;
-  <img src="screenshots/accounts-v1036.png" alt="Account manager" width="46%">
+  <img src="screenshots/github-2026-10-02/upload-compact.png" alt="Compact 760 by 520 window with the queue, upload controls, speed and remaining time" width="68%">
+</p>
+
+</details>
+
+<details>
+<summary>Accounts and settings</summary>
+
+<p align="center">
+  <img src="screenshots/github-2026-10-02/accounts-full.png" alt="Account manager for all ten hosts, including Chomikuj and FileShark" width="100%">
 </p>
 
 <p align="center">
-  <img src="screenshots/settings-v1036.png" alt="Settings — theme and language" width="60%">
+  <img src="screenshots/github-2026-10-02/settings.png" alt="Appearance, language, notifications and Windows integration settings" width="100%">
 </p>
 
----
+</details>
 
-## Highlights
-
-- **Multi-host** — upload to [Uploadao](https://uploadao.com), [Rapidgator](https://rapidgator.net), [1fichier](https://1fichier.com), [DDownload](https://ddownload.com), [Uploady](https://uploady.io), [TwojPlik](https://twojplik.to), [Pobieraj](https://pobieraj.to), and [Wrzuta.net](https://wrzuta.net) from one app.
-- **Mirror** — send the same file to several hosts at once and get a link from each. Just tick the hosts under *Send to*.
-- **Account Manager** — a dedicated tab to save and verify your credentials per host. Only configured hosts appear as upload targets.
-- **Built for big files** — fully streamed uploads keep memory usage flat (a few MB of RAM) whether the file is 5 MB or 60 GB.
-- **Upload queue** — add many files; send them one after another or several at once. Files added mid-upload are picked up automatically.
-- **Parallel uploads** — send multiple files simultaneously (configurable, 1–8).
-- **Multi-threaded per file** — on Uploadao, each file is split into parallel chunks to saturate your connection.
-- **Reorder on the fly** — change upload order with the ▲▼ arrows or a right-click menu, even while uploading.
-- **Live progress** — per-row status plus an aggregate bar with combined speed and ETA for the whole batch.
-- **Resilient** — automatic retry with backoff on dropped connections, so a momentary network blip doesn't fail an entire file.
-- **Resume-friendly state** — your queue, resulting links, settings, and saved accounts persist between sessions.
-- **Drag & drop** — drop files straight onto the window.
-- **Auto-update** — checks for new versions on launch and updates itself in place.
-
----
-
-## Download
-
-Grab the latest `VersitUploader.exe` from the [**Releases**](https://github.com/sitek-wy/versit-uploader/releases/latest) page.
-
-No installer, no dependencies — just run the `.exe`. Windows 10/11, 64-bit.
-
-> On first launch SmartScreen may warn about an unrecognized publisher (the build is unsigned). Choose **More info → Run anyway**.
-
----
-
-## Usage
-
-### 1. Add your accounts (Accounts tab)
-
-Open the **Konta / Accounts** tab and fill in the hosts you want to use:
-
-- **Uploadao / Rapidgator / Wrzuta.net** — login + password. Wrzuta.net uses the native Z-O-O-M API, so no browser window or Cloudflare challenge is involved.
-- **1fichier / DDownload / Uploady** — paste your **API key** into the key field (login is ignored).
-
-Click **Save & log in**. Most hosts verify the credentials immediately. Wrzuta.net follows the official Z-O-O-M behavior: it saves the account locally and verifies it when the first file is initialized. Saved accounts are remembered between sessions.
-
-### 2. Upload (Upload tab)
-
-1. Under **Send to**, tick the host(s) you want. Only hosts you've configured appear here. Tick more than one to **mirror** the upload.
-2. **Add files** — click *Add files* or drag them onto the window. Each file becomes one row per selected host.
-3. **Tune throughput** (optional):
-   - **Files at once** — how many files upload simultaneously (1–8).
-   - **Threads/file** — parallel connections per file (Uploadao).
-4. Click **Upload all**.
-
-### 3. Manage the queue
-
-- **Checkbox** on each row — select rows for bulk actions (*Remove selected*, *Copy selected*).
-- **▲▼ arrows** or **right-click menu** — move a row up/down, open or copy its link, or remove it. Reordering affects what uploads next.
-- **Double-click a row** — open its link in the browser.
-- **Copy all** — copy every finished link to the clipboard.
-
-The queue and links persist after you close the app.
-
----
+Screenshots use demonstration files, accounts and transfer states.
 
 ## Supported hosts
 
-| Host | Auth | Upload model | Notes |
-|------|------|--------------|-------|
-| **Uploadao** | Optional (account or anonymous) | Multi-threaded chunked | Parallel chunks per file; fastest option |
-| **Rapidgator** | Account (login + password) | Single streamed connection | Free accounts limited to 5 GB/file |
-| **1fichier** | API key | Single streamed connection | Paste the API key into the key field |
-| **DDownload** | API key | Single streamed connection | Paste the API key into the key field |
-| **Uploady** | API key | Single streamed connection | Paste the API key into the key field |
-| **TwojPlik** | Account (login + password) | Single streamed connection | — |
-| **Pobieraj** | Account (login + password) | Single streamed connection | Same ZOOM network as TwojPlik |
-| **Wrzuta.net** | Account (login + password) | Resumable 40 MiB chunks | Native Z-O-O-M API with MD5 duplicate detection; no browser authentication |
+All **10 hosts** are available in the account manager. Hosts with saved credentials appear in **Send to / Wyślij na**.
 
-All uploads are streamed from disk, so even multi-GB files use only a few MB of RAM.
+| Host | Credentials | Upload behavior |
+|---|---|---|
+| [Uploadao](https://uploadao.com) | Login + password | Parallel streamed chunks; saves incomplete uploads for restart resume |
+| [Rapidgator](https://rapidgator.net) | Login + password | Streamed upload with hashing and server processing status |
+| [1fichier](https://1fichier.com) | API key | Streamed multipart upload |
+| [DDownload](https://ddownload.com) | API key | Streamed multipart upload |
+| [TwojPlik](https://twojplik.to) | Login + password | Sequential streamed chunks using the ZOOM-compatible protocol |
+| [Pobieraj](https://pobieraj.to) | Login + password | Sequential streamed chunks using the ZOOM-compatible protocol |
+| [Wrzuta.net](https://wrzuta.net) | Login + password | 40 MiB chunks, duplicate checking and connection recovery during the upload |
+| [Uploady](https://uploady.io) | API key | Streamed multipart upload |
+| [Chomikuj](https://chomikuj.pl) | Login + password | ChomikBox-compatible upload to the account's root folder |
+| [FileShark](https://fileshark.pl) | API key | Official API v1; streamed PUT parts and refreshed upload URLs on retry |
 
----
+File-size limits and account restrictions depend on the hosting service. Files are read from disk as they upload, keeping file-data memory overhead low.
 
-## Settings & data
+## What you can do
 
-The app stores its state in:
+- **Mirror to several hosts:** select multiple destinations in one opening of the list. Each file gets its own transfer and link for each selected host.
+- **Work with a large queue:** compact rows, collapsible navigation, per-file progress, combined speed and remaining time.
+- **Control throughput:** 1–8 simultaneous transfers and 1–16 connections per file on Uploadao.
+- **Add files your way:** drag and drop, **Add files**, the built-in **Files** browser, or optional Windows Explorer integration.
+- **Manage transfers:** select rows, reorder pending work with the arrows or context menu, cancel, and use **Retry** for failed uploads. Files added during an upload are picked up automatically.
+- **Keep your links:** copy selected or all finished links, and search the upload history by file, host or link.
+- **Continue later:** accounts, settings, queue order and finished links persist between sessions. Uploadao also saves incomplete-upload state for restart resume.
+- **Use Windows conveniences:** tray notifications, optional startup with Windows, and built-in update checks.
 
-```
+Automatic network retries are used where supported by the host adapter. Wrzuta.net and Chomikuj can recover server offsets during an upload; FileShark restarts as a new upload after cancellation or failure.
+
+## Quick start
+
+### 1. Download and open
+
+Download `VersitUploader.exe` from [the latest release](https://github.com/sitek-wy/versit-uploader/releases/latest) and run it. No installer or separate Python installation is needed.
+
+If Windows SmartScreen flags the unsigned build, choose **More info → Run anyway** after checking that you downloaded it from this repository.
+
+### 2. Add your accounts
+
+Open **Accounts / Konta**, enter your credentials, and choose **Save & log in / Zapisz i zaloguj**.
+
+- **Login + password:** Uploadao, Rapidgator, TwojPlik, Pobieraj, Wrzuta.net and Chomikuj.
+- **API key:** 1fichier, DDownload, Uploady and FileShark. Paste the key into **API key / Klucz API**.
+- **FileShark:** generate your key in the account's security settings. Existing browser sessions need to be replaced with an API key.
+- **Wrzuta.net:** the account is saved locally and verified when the first upload starts.
+
+### 3. Choose destinations and files
+
+1. Open **Transfers / Transfery** and the **Send to / Wyślij na** list.
+2. Select one or several hosts. The list stays open between selections; close it with **Done / Gotowe**, Esc or a click outside it.
+3. Choose **Add files / Dodaj pliki**, drag files onto the window, or add them from **Files / Pliki**. One file creates one queue row per selected host.
+4. In **Options / Opcje**, optionally adjust **Simultaneous files** and **Connections per file**. The latter applies to Uploadao.
+5. Choose **Start upload / Rozpocznij wysyłanie**.
+
+Destination changes apply to files added afterward. Existing queue rows retain their host.
+
+### 4. Manage the queue and links
+
+- Use the row checkboxes for **Remove selected / Usuń zaznaczone** and **Copy links / Kopiuj linki**.
+- Use **▲▼** or the right-click menu to change the pending upload order, retry a transfer, open or copy a link, or remove a row.
+- Double-click a completed row to open its link.
+- Choose **All links / Wszystkie linki** to copy every finished link.
+- Use **History / Historia** to find previously uploaded files and their links.
+
+## Settings and local data
+
+The app stores accounts, preferences, the queue and history in:
+
+```text
 %APPDATA%\VersitUploader\config.json
 ```
 
-This includes per-host credentials (passwords and keys are base64-encoded, **not** strongly encrypted), your last-used settings (files-at-once, threads, selected hosts), and the saved queue with its links.
+Uploadao's incomplete-upload state is stored separately in `resume.json` in the same folder.
 
-To reset everything, delete that folder.
+Passwords and API keys are base64-encoded rather than encrypted. Save credentials only on a computer you trust and keep this folder private.
 
----
+Transfers go to the selected hosting service. Chomikuj authentication uses HTTPS; its legacy upload protocol may provide an HTTP endpoint for file data. Treat download links as shareable URLs: anyone with a public file's link may be able to access it.
 
-## Auto-update
-
-On launch the app checks for the latest version. If a newer one exists, it offers to download and install it, then relaunches automatically. No manual download needed.
-
----
-
-## Security & privacy
-
-- Credentials are stored locally only. Passwords and API keys are base64-encoded in `config.json` — this is obfuscation, not encryption. Save accounts only on machines you trust.
-- All transfers go directly to the chosen host over HTTPS. The app sends nothing to any third party.
-- Treat your upload links as shareable URLs — anyone with the link can access a public file.
-
----
+The app checks GitHub Releases on launch and offers to download and install a newer version when one is available. **Settings / Ustawienia** controls the theme, language, notifications and optional Windows integration.
 
 ## License
 
-Released for personal use. Not affiliated with any of the supported hosts.
+Released for personal use. Not affiliated with any of the supported hosting services.
