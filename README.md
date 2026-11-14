@@ -73,6 +73,7 @@ File-size limits and account restrictions depend on the hosting service. Files a
 - **Add files your way:** drag and drop, **Add files**, the built-in **Files** browser, or optional Windows Explorer integration.
 - **Manage transfers:** select rows, reorder pending work with the arrows or context menu, cancel, and use **Retry** for failed uploads. Files added during an upload are picked up automatically.
 - **Keep your links:** copy selected or all finished links, and search the upload history by file, host or link.
+- **Sort pasted links:** natural ordering by filename or domain (`file1`, `file2`, `file10`), ascending or descending. Group by domain or the same filename across hosts, choose 0–10 blank lines between groups, and optionally remove duplicates. Paste plain URLs, BBCode, HTML or Markdown; processing is local.
 - **Continue later:** accounts, settings, queue order and finished links persist between sessions. Uploadao also saves incomplete-upload state for restart resume.
 - **Use Windows conveniences:** tray notifications, optional startup with Windows, and built-in update checks.
 
@@ -112,6 +113,10 @@ Destination changes apply to files added afterward. Existing queue rows retain t
 - Double-click a completed row to open its link.
 - Choose **All links / Wszystkie linki** to copy every finished link.
 - Use **History / Historia** to find previously uploaded files and their links.
+
+## Sort links
+
+Open **Sort links / Sortowanie linków** and paste your list. The result updates automatically. Choose filename or domain sorting, optional grouping and the number of blank lines between groups, then use **Copy result / Kopiuj wynik**. Filename sorting reads names from the URL; short links without a filename fall back to their address. No files or link metadata are downloaded.
 
 ## Settings and local data
 
